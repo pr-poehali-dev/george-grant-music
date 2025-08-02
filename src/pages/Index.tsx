@@ -4,22 +4,22 @@ import Icon from "@/components/ui/icon";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-gold/20">
+      <nav className="fixed top-0 w-full z-50 glass-effect">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="font-heading font-bold text-2xl text-gold">
+            <div className="font-heading font-bold text-2xl gradient-text">
               George Grant
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="hover:text-gold transition-colors">Главная</a>
-              <a href="#biography" className="hover:text-gold transition-colors">Биография</a>
-              <a href="#music" className="hover:text-gold transition-colors">Музыка</a>
-              <a href="#gallery" className="hover:text-gold transition-colors">Галерея</a>
-              <a href="#contact" className="hover:text-gold transition-colors">Контакты</a>
+              <a href="#home" className="hover:text-yellow-300 transition-colors text-lg font-medium">Главная</a>
+              <a href="#biography" className="hover:text-yellow-300 transition-colors text-lg font-medium">Биография</a>
+              <a href="#music" className="hover:text-yellow-300 transition-colors text-lg font-medium">Музыка</a>
+              <a href="#gallery" className="hover:text-yellow-300 transition-colors text-lg font-medium">Галерея</a>
+              <a href="#contact" className="hover:text-yellow-300 transition-colors text-lg font-medium">Контакты</a>
             </div>
-            <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-black">
+            <Button className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white border-0 pulse-glow">
               Связаться
             </Button>
           </div>
@@ -28,40 +28,49 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-          style={{
-            backgroundImage: "url('/img/0d12a304-7490-4fb9-ba89-265e7d21503c.jpg')",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90" />
+        <div className="absolute inset-0 bg-black/20" />
         
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-          <h1 className="font-heading text-6xl md:text-8xl font-bold mb-6 text-gold animate-fade-in">
+        {/* Floating decorative elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 floating blur-xl" />
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-pink-400 to-red-500 rounded-full opacity-30 floating blur-xl" style={{animationDelay: '1s'}} />
+        <div className="absolute bottom-40 left-20 w-40 h-40 bg-gradient-to-r from-green-400 to-blue-500 rounded-full opacity-15 floating blur-xl" style={{animationDelay: '2s'}} />
+        
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
+          <div className="mb-8">
+            <img 
+              src="/img/0d12a304-7490-4fb9-ba89-265e7d21503c.jpg" 
+              alt="George Grant" 
+              className="w-64 h-64 rounded-full mx-auto mb-8 shadow-2xl neon-glow object-cover border-4 border-white/30"
+            />
+          </div>
+          
+          <h1 className="font-heading text-7xl md:text-9xl font-bold mb-6 gradient-text animate-pulse">
             George Grant
           </h1>
-          <p className="font-serif text-2xl md:text-3xl mb-8 text-gray-200 animate-fade-in">
-            Известный русско-греческий певец
+          <p className="text-3xl md:text-4xl mb-8 text-yellow-200 font-light">
+            ✨ Известный русско-греческий певец ✨
           </p>
-          <p className="text-lg md:text-xl mb-12 text-gray-300 max-w-2xl mx-auto animate-fade-in">
-            Уникальное звучание, сочетающее традиции русской и греческой музыкальной культуры
+          <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Магия музыки, объединяющая сердца! Уникальное звучание традиций русской и греческой культуры 🎵
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button size="lg" className="bg-gold text-black hover:bg-gold/90 font-semibold px-8 py-4">
-              <Icon name="Play" className="mr-2" size={20} />
-              Слушать музыку
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 hover:from-purple-700 hover:via-pink-700 hover:to-red-700 text-white border-0 px-10 py-6 text-xl font-bold rounded-full neon-glow">
+              <Icon name="Play" className="mr-3" size={24} />
+              🎧 Слушать музыку
             </Button>
-            <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-black px-8 py-4">
-              <Icon name="Calendar" className="mr-2" size={20} />
-              Концерты
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 hover:from-blue-700 hover:via-cyan-700 hover:to-teal-700 text-white border-0 px-10 py-6 text-xl font-bold rounded-full">
+              <Icon name="Calendar" className="mr-3" size={24} />
+              🎤 Концерты
             </Button>
           </div>
         </div>
 
-        {/* Floating elements */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-pulse">
-          <Icon name="ChevronDown" size={32} className="text-gold" />
+        {/* Animated scroll indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-8 h-14 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-ping" />
+          </div>
         </div>
       </section>
 
